@@ -1,7 +1,10 @@
+/*
+https://leetcode.com/problems/two-sum/description/
+
 //test cases 1
 let nums = [2,7,11,15];
 let target = 9;
-/*
+
 //test cases 2
 let nums = [3,2,4]
 let target = 6;
