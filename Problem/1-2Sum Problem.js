@@ -1,14 +1,15 @@
 //test cases 1
 let nums = [2,7,11,15];
 let target = 9;
-
+/*
 //test cases 2
-// let nums = [3,2,4]
-// let target = 6;
+let nums = [3,2,4]
+let target = 6;
 
 //test cases 3
-// let nums = [3,3]
-// let target = 6;
+let nums = [3,3]
+let target = 6;
+*/
 
 var twoSum = function (nums, target) {
     let resObj = {};
