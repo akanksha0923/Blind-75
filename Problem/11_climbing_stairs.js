@@ -5,8 +5,11 @@
   Explanation: There are two ways to climb to the top.
   1. 1 step + 1 step
   2. 2 steps
-*/
 
+  - start from the end which is n.
+  - so to reach n you can have climbStairs(n-1) + climbStairs(n)
+  - use DP - bottom up approach
+*/
 
 var climbStairs = function (n) {
     if (n === 1) return 1;
