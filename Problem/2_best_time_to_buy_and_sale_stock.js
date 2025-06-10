@@ -6,7 +6,23 @@
   Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
 */
 
+// way 1 -  O(n²) - nested loops check all buy-sell pairs
 
+var maxProfit = function (prices) {
+    // Try every possible buy-sell combination
+    let maxProfit = 0;
+    
+    for (let i = 0; i < prices.length; i++) {
+        for (let j = i + 1; j < prices.length; j++) {
+            const profit = prices[j] - prices[i];
+            maxProfit = Math.max(maxProfit, profit);
+        }
+    }
+    
+    return maxProfit;
+}
+
+// way 2 - Track Minimum Buy Price & max profit
 var maxProfit = function (prices) {
     let buy = prices[0];
     let profit = 0;
