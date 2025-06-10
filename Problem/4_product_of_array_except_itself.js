@@ -11,8 +11,26 @@ Input: nums = [-1,1,0,-3,3]
 Output: [0,0,9,0,0]
 */
 
-//way 1
+//Way 1 : O(n²) - for each element, multiply all others
 var productExceptSelf_1 = function (nums) {
+    const result = [];
+    
+    for (let i = 0; i < nums.length; i++) {
+        let product = 1;
+        for (let j = 0; j < nums.length; j++) {
+            if (i !== j) {
+                product *= nums[j];
+            }
+        }
+        result[i] = product;
+    }
+    
+    return result;
+}
+
+//way 2 - O(n) - three separate passes
+// space - O(n) - two extra arrays
+var productExceptSelf_2 = function (nums) {
     let pre = [];
     let post = [];
     let output = [];
@@ -33,8 +51,9 @@ var productExceptSelf_1 = function (nums) {
     return output;
 };
 
-//way 2
-var productExceptSelf_2 = function (nums) {
+//way 3 - O(n) - two passes through array
+//Space Complexity: O(1) - no extra arrays (output doesn't count)
+var productExceptSelf_3 = function (nums) {
     let pre = 1;
     let post = 1;
     let output = [];
