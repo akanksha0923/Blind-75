@@ -14,6 +14,9 @@ let nums = [3,3]
 let target = 6;
 */
 
+// way 1 - use 2 nested loops to findout the indexes, here the complexity will be O(n^2)
+
+// way 2 - using map - O(n)
 var twoSum = function (nums, target) {
     let resObj = {};
     let output = []
@@ -33,4 +36,26 @@ var twoSum = function (nums, target) {
     return output[0]
 }
 
-console.log(twoSum(nums, target))
+// way 3 - Two Pointers (Sorted Array) - O(n log n) 
+var twoSum = function (nums, target) {
+    // Create array of [value, original_index] pairs
+    const indexedNums = nums.map((num, index) => [num, index]);
+    indexedNums.sort((a, b) => a[0] - b[0]); // Sort by value
+    
+    let left = 0;
+    let right = indexedNums.length - 1;
+    
+    while (left < right) {
+        const currentSum = indexedNums[left][0] + indexedNums[right][0];
+        
+        if (currentSum === target) {
+            return [indexedNums[left][1], indexedNums[right][1]];
+        } else if (currentSum < target) {
+            left++;
+        } else {
+            right--;
+        }
+    }
+    
+    return [];
+}
