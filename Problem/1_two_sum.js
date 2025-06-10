@@ -16,7 +16,7 @@ let target = 6;
 
 // way 1 - use 2 nested loops to findout the indexes, here the complexity will be O(n^2)
 
-// way 2 - using map - O(n)
+// way 2 - using map - O(n) - best solution
 var twoSum = function (nums, target) {
     let resObj = {};
     let output = []
