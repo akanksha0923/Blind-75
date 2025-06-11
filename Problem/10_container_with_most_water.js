@@ -16,6 +16,7 @@ var maxArea = function (height) {
         let area = Math.min(height[left], height[right]) * width;
         max = Math.max(max, area);
 
+        //stay at the bigger height, move away from the smaller height
         if (height[left] <= height[right]) {
             left++;
         } else {
