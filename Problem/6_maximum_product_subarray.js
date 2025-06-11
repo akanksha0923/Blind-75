@@ -35,7 +35,7 @@ var maxProduct = function(nums) {
 
 
 /*
-Way2 : 
+Way2 (better): 
 1) keep min and max so far
 2) if the min is -ve and nums[i] < 0, then we can have a positive large value
 3) resent everything for nums[i] ==== 0
