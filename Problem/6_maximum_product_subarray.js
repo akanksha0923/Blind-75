@@ -8,13 +8,14 @@
   2. if odd number is -
   3. if even number is -
   4. if there is one or more zeros
+*/
 
+/*
+  Way1 : 
   1) divide the array by occurance of zeros
   2) find the max_pre & max_post from both sides
   3) keep one result, that will be max of all times.
 */
-
-
 var maxProduct = function(nums) {
     let result = nums[0];
     let pre = 1;
@@ -31,3 +32,33 @@ var maxProduct = function(nums) {
     }
     return result
 };
+
+
+/*
+Way2 : 
+1) keep min and max so far
+2) if the min is -ve and nums[i] < 0, then we can have a positive large value
+3) resent everything for nums[i] ==== 0
+*/
+function maxProduct(nums) {
+    let maxSoFar = nums[0];
+    let currMax = nums[0];
+    let currMin = nums[0];
+
+    for (let i = 1; i < nums.length; i++) {
+        let num = nums[i];
+
+        // If num is negative, swap currMax and currMin
+        if (num < 0) {
+            let temp = currMax;
+            currMax = currMin;
+            currMin = temp;
+        }
+
+        currMax = Math.max(num, currMax * num);
+        currMin = Math.min(num, currMin * num);
+        maxSoFar = Math.max(maxSoFar, currMax);
+    }
+
+    return maxSoFar;
+}
