@@ -4,7 +4,7 @@
   Output: 1
   Explanation: The original array was [1,2,3,4,5] rotated 3 times.
 
-  1. Identify the sorted half and eliminate it.
+  1. Identify the sorted first half and eliminate it.
 */
 
 var findMin = function (nums) {
