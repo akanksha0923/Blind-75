@@ -1,6 +1,6 @@
 /*https://leetcode.com/problems/house-robber-ii/
 
-run 2 loops
+1. run 2 loops
 
 
 */
