@@ -1,13 +1,15 @@
 /*
 https://leetcode.com/problems/coin-change/
-
 https://www.youtube.com/watch?v=H9bfqozjoqs
+
 Input: coins = [1,2,5], amount = 11
 Output: 3
 Explanation: 11 = 5 + 5 + 1
 
+- if we use brute force using recursion 
+    -- then you will be solving same smaller problems again  and again
 - top down DP approach
-
+- do not go further down if coin[i] - amount <= 0
 */
 
 function coinChange(coins, amount) {
