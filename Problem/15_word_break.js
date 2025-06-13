@@ -8,7 +8,6 @@
 
 
 // Way 1 : O(n*n*n)
-
 var wordBreak = function (s, wordDict) {
     const wordSet = new Set(wordDict);
     const n = s.length;
