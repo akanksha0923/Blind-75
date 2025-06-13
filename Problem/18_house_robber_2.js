@@ -1,9 +1,12 @@
-/*https://leetcode.com/problems/house-robber-ii/
+/*
+https://leetcode.com/problems/house-robber-ii/description/
 
-1. run 2 loops
 
-
+1. check from i = 0 till i = nums.length - 2
+2. check from i = 1 till i = nums.length - 1;
+3. get max of both & return
 */
+
 
 var rob = function (nums) {
     let rob1 = 0
@@ -28,3 +31,5 @@ var rob = function (nums) {
 
     return Math.max(max1, max2)
 };
+
+
