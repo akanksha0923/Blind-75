@@ -5,7 +5,7 @@ Output: 4
 Explanation: The longest increasing subsequence is [2,3,7,101], therefore the length is 4.
 
 - at array[i] check how many items are smaller than array[i] from array[0] till array[i]
-- keep max count of how many values are smaller than array[i] from array[0] till array[i]
+- keep max count of them
 */
 
 var lengthOfLIS = function(nums) {
