@@ -8,6 +8,7 @@
   These are the only two combinations.
 */
 
+// way 1
 // O(n ^ t) n:number of candidates, t: target
 var combinationSum = function (candidates, target) {
     const result = [];
@@ -47,39 +48,5 @@ var combinationSum = function (candidates, target) {
     backtrack(0, [], target, candidates, result);
     return result;
 }
-
-
-
-// way 2
-// O(n ^ t) n:number of candidates, t: target
-function backtrack(target, result, combination, start, candidates) {
-    if (target === 0) {
-        result.push([...combination]);
-        return;
-    }
-    else if (target < 0) return;
-    for (let i = start; i < candidates.length; i++) {
-        combination.push(candidates[i]);
-        backtrack(target - candidates[i], result, combination, i, candidates);
-        combination.pop();
-    }
-}
-var combinationSum = function (candidates, target) {
-    const result = [];
-    const combination = [];
-    backtrack(target, result, combination, 0, candidates);
-    return result;
-}
-
-
-
-
-
-
-
-
-
-
-
 
 
