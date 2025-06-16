@@ -4,9 +4,6 @@
   Output: true
   Explanation: Return true because "applepenapple" can be segmented as "apple pen apple".
                Note that you are allowed to reuse a dictionary word.
-
-  1. create DP array on s + 1 length.
-  2. 
 */
 
 
