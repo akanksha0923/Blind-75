@@ -13,6 +13,9 @@
 var combinationSum = function (candidates, target) {
     const result = [];
 
+    //new function object created every time combinationSum is called so it is slower
+    //It creates a new closure every time the outer function runs
+    //closure carry memory and scope baggage
     function backtrack(startIndex, currentPath, remainingTarget) {
         if (remainingTarget === 0) {
             result.push([...currentPath]);
