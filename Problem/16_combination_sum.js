@@ -28,9 +28,30 @@ var combinationSum = function (candidates, target) {
     return result;
 }
 
+// way 1.2 - faster
+function backtrack(startIndex, currentPath, remainingTarget, candidates, result) {
+    if (remainingTarget === 0) {
+        result.push([...currentPath]);
+        return;
+    }
+    if (remainingTarget < 0) return;
+    for (let i = startIndex; i < candidates.length; i++) {
+        currentPath.push(candidates[i]);
+        backtrack(i, currentPath, remainingTarget - candidates[i], candidates, result);
+        currentPath.pop();
+    }
+}
+
+var combinationSum = function (candidates, target) {
+    const result = [];
+    backtrack(0, [], target, candidates, result);
+    return result;
+}
+
 
 
 // way 2
+// O(n ^ t) n:number of candidates, t: target
 function backtrack(target, result, combination, start, candidates) {
     if (target === 0) {
         result.push([...combination]);
